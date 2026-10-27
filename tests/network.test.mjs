@@ -2,8 +2,8 @@
 //   node --test tests/*.test.mjs
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { parseIp, ipStr, maskBits, sameNet, hostOk, canLink, effective, ping, checkGoals, applyOp, cloneNet, netStars } from '../trainers/networktrainer/js/logic.js';
-import { LEVELS, CHAPTERS } from '../trainers/networktrainer/js/levels.js';
+import { parseIp, ipStr, maskBits, sameNet, hostOk, canLink, effective, ping, checkGoals, applyOp, cloneNet, netStars } from '../networktrainer/js/logic.js';
+import { LEVELS, CHAPTERS } from '../networktrainer/js/levels.js';
 
 const M = '255.255.255.0';
 const pc = (id, ip = '', gw = '', dns = '', more = {}) => ({ id, type: 'pc', name: id.toUpperCase(), ip, mask: M, gw, dns, ...more });

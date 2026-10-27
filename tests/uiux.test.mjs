@@ -2,9 +2,9 @@
 //   node --test tests/*.test.mjs
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { contrast, hexToRgb, contrastLevel, starsFor, fixScore } from '../trainers/uiuxtrainer/js/logic.js';
-import { mock, partsOf } from '../trainers/uiuxtrainer/js/mocks.js';
-import { LEVELS, CHAPTERS } from '../trainers/uiuxtrainer/js/levels.js';
+import { contrast, hexToRgb, contrastLevel, starsFor, fixScore } from '../uiuxtrainer/js/logic.js';
+import { mock, partsOf } from '../uiuxtrainer/js/mocks.js';
+import { LEVELS, CHAPTERS } from '../uiuxtrainer/js/levels.js';
 
 test('контраст за WCAG', () => {
   assert.deepEqual(hexToRgb('#fff'), [255, 255, 255]);

@@ -2,8 +2,8 @@
 //   node --test tests/*.test.mjs
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { parseCombo, matches, comboKeys, comboLabel, pressedKeys, scorePress, starsFor } from '../trainers/hotkeystrainer/js/logic.js';
-import { LEVELS, CHAPTERS } from '../trainers/hotkeystrainer/js/levels.js';
+import { parseCombo, matches, comboKeys, comboLabel, pressedKeys, scorePress, starsFor } from '../hotkeystrainer/js/logic.js';
+import { LEVELS, CHAPTERS } from '../hotkeystrainer/js/levels.js';
 
 const ev = (code, mods = {}) => ({ code, ctrlKey: false, shiftKey: false, altKey: false, metaKey: false, ...mods });
 

@@ -8,7 +8,7 @@ const browser = await launch();
 const errors = [];
 const ctx = await browser.newContext({ viewport: { width: 1360, height: 1000 }, acceptDownloads: true });
 const p = await newPage(ctx, errors);
-await p.goto(server.url + '/trainers/network-trainer');
+await p.goto(server.url + '/network-trainer');
 await p.waitForFunction(() => window.NetworkTrainer);
 
 const T = fn => p.evaluate(fn);
@@ -153,7 +153,7 @@ await step('усі 20 рівнів проходяться на три зірки
 });
 
 await step('прогрес зберігається після перезавантаження', async () => {
-  await p.goto(server.url + '/trainers/network-trainer');
+  await p.goto(server.url + '/network-trainer');
   await p.waitForFunction(() => window.NetworkTrainer);
   assert.equal(await p.locator('.lvl:not([disabled])').count(), 20);
   assert.match(await p.textContent('#total'), /60 \/ 60/);

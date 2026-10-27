@@ -2,8 +2,8 @@
 //   node --test tests/*.test.mjs
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { registrable, parseUrl, strength, crackTime, scorePick, starsFor, segments } from '../trainers/safetytrainer/js/logic.js';
-import { LEVELS, CHAPTERS } from '../trainers/safetytrainer/js/levels.js';
+import { registrable, parseUrl, strength, crackTime, scorePick, starsFor, segments } from '../safetytrainer/js/logic.js';
+import { LEVELS, CHAPTERS } from '../safetytrainer/js/levels.js';
 
 test('справжнє ім’я сайту: піддомени, приманки на початку, «@», дво-рівневі зони', () => {
   assert.equal(registrable('www.kublandia.com'), 'kublandia.com');

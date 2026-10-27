@@ -2,14 +2,14 @@
 //   node tests/safety-e2e.mjs
 import assert from 'node:assert/strict';
 import { startServer, launch, newPage, step } from './_harness.mjs';
-import { strength } from '../trainers/safetytrainer/js/logic.js';
+import { strength } from '../safetytrainer/js/logic.js';
 
 const server = await startServer();
 const browser = await launch();
 const errors = [];
 const ctx = await browser.newContext({ viewport: { width: 1360, height: 900 }, acceptDownloads: true });
 const p = await newPage(ctx, errors);
-await p.goto(server.url + '/trainers/safety-trainer');
+await p.goto(server.url + '/safety-trainer');
 await p.waitForFunction(() => window.SafetyTrainer);
 
 const task = () => p.evaluate(() => JSON.parse(JSON.stringify(window.SafetyTrainer.task)));
@@ -128,7 +128,7 @@ await step('усі 20 рівнів проходяться на три зірки
 });
 
 await step('прогрес зберігається після перезавантаження', async () => {
-  await p.goto(server.url + '/trainers/safety-trainer'); await p.waitForFunction(() => window.SafetyTrainer);
+  await p.goto(server.url + '/safety-trainer'); await p.waitForFunction(() => window.SafetyTrainer);
   assert.equal(await p.locator('.lvl.perfect').count(), 20);
   assert.match(await p.textContent('#heroAcc'), /100%/);
 });

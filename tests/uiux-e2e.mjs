@@ -8,7 +8,7 @@ const browser = await launch();
 const errors = [];
 const ctx = await browser.newContext({ viewport: { width: 1360, height: 1000 }, acceptDownloads: true });
 const p = await newPage(ctx, errors);
-await p.goto(server.url + '/trainers/uiux-trainer');
+await p.goto(server.url + '/uiux-trainer');
 await p.waitForFunction(() => window.UiuxTrainer);
 
 const T = fn => p.evaluate(fn);
@@ -106,7 +106,7 @@ await step('усі 20 рівнів проходяться на три зірки
 });
 
 await step('прогрес зберігається після перезавантаження', async () => {
-  await p.goto(server.url + '/trainers/uiux-trainer');
+  await p.goto(server.url + '/uiux-trainer');
   await p.waitForFunction(() => window.UiuxTrainer);
   assert.equal(await p.locator('.lvl:not([disabled])').count(), 20);
   assert.match(await p.textContent('#total'), /60 \/ 60/);

@@ -2,14 +2,14 @@
 //   node tests/hotkeys-e2e.mjs
 import assert from 'node:assert/strict';
 import { startServer, launch, newPage, step } from './_harness.mjs';
-import { parseCombo } from '../trainers/hotkeystrainer/js/logic.js';
+import { parseCombo } from '../hotkeystrainer/js/logic.js';
 
 const server = await startServer();
 const browser = await launch();
 const errors = [];
 const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 }, acceptDownloads: true });
 const p = await newPage(ctx, errors);
-await p.goto(server.url + '/trainers/hotkeys-trainer');
+await p.goto(server.url + '/hotkeys-trainer');
 await p.waitForFunction(() => window.HotkeysTrainer);
 
 // комбінація з рівнів → натискання Playwright за фізичними клавішами
@@ -139,7 +139,7 @@ await step('усі 20 рівнів проходяться на три зірки
 });
 
 await step('прогрес зберігається після перезавантаження', async () => {
-  await p.goto(server.url + '/trainers/hotkeys-trainer'); await p.waitForFunction(() => window.HotkeysTrainer);
+  await p.goto(server.url + '/hotkeys-trainer'); await p.waitForFunction(() => window.HotkeysTrainer);
   assert.equal(await p.locator('.lvl.perfect').count(), 20);
   assert.ok(+(await p.textContent('#heroAcc')) >= 40);
 });

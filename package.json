@@ -1,0 +1,10 @@
+{
+  "name": "edvault-trainers",
+  "private": true,
+  "description": "Тренажери для учнів: мишка, файли, безпека в інтернеті, гарячі клавіші, сліпий друк, алгоритми, мережі, дизайн (статичні сторінки, без збирання)",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:e2e": "node tests/run-browser-tests.mjs"
+  }
+}
