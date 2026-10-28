@@ -188,6 +188,13 @@ body { font: 17px/1.55 'Golos Text', system-ui, sans-serif; color: var(--ink); b
   .scene { height: auto; } .stage { position: relative; height: auto; min-height: 100vh; padding-block: 60px; }
   .art { height: 560px; }
 }
+.allbtn { justify-self: start; width: max-content; display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 22px 0 24px; border-radius: 26px; background: var(--ink); color: var(--paper); font: 600 17px Rubik, sans-serif; text-decoration: none; transition: transform .15s, box-shadow .15s; }
+.allbtn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .15s; }
+.allbtn:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(0,0,0,.18); }
+.allbtn:hover svg { transform: translateX(3px); }
+.allbtn:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.hero .allbtn { margin-top: 28px; position: relative; animation: fade 1s .7s both; }
+.end .allbtn { margin-top: 30px; }
 </style>
 </head>
 <body>
@@ -208,6 +215,7 @@ body { font: 17px/1.55 'Golos Text', system-ui, sans-serif; color: var(--ink); b
   <div class="ladder" aria-hidden="true" data-ladder></div>
   <h1><span class="ln"><span>Десять тренажерів.</span></span><span class="ln"><span>257 рівнів.</span></span></h1>
   <p class="lead">Мишка, файли, безпека в інтернеті, сліпий друк, алгоритми, мережі й дизайн. Від простого до складного, з підказками на кожному кроці й зірками за точність.</p>
+  <a class="allbtn" href="catalog">Усі тренажери<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   <div class="cue" aria-hidden="true"><i></i>Гортайте вниз</div>
 </header>
 
@@ -282,6 +290,7 @@ body { font: 17px/1.55 'Golos Text', system-ui, sans-serif; color: var(--ink); b
   <section class="end" aria-labelledby="h-end">
     <h2 id="h-end">Помилятися можна скільки завгодно.</h2>
     <p>Кожен рівень можна пройти знову, а підказки з'являються, коли щось не виходить. Прогрес і зірки зберігаються в браузері, без реєстрації.</p>
+    <a class="allbtn" href="catalog">Усі тренажери<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     <div class="row10" aria-hidden="true" data-row></div>
   </section>
 </main>
